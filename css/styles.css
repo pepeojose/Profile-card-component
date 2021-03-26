@@ -1,0 +1,153 @@
+:root {
+    --dark-cyan: hsl(185, 75%, 39%);
+    --text-gray: hsl(0, 0%, 59%);
+    --circle-blue: hsl(185, 75%, 41%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main-container {
+    height: 100vh;
+    background-color: var(--dark-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container::after,
+.main-container::before {
+    content: '';
+    position: fixed;
+    display: block;
+    background-color: var(--circle-blue);
+    border-radius: 50%;
+    width: 100vmin;
+    height: 100vmin;
+}
+
+.main-container::before {
+    top: -400px;
+    left: -400px;
+}
+
+.main-container::after {
+    bottom: -400px;
+    right: -400px;
+}
+
+.card {
+    position: relative;
+    width: 30%;
+    height: 550px;
+    border-radius: 25px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.card__header {
+    height: 40%;
+    border-radius: 25px 25px 0 0;
+    background-color: hsl(214, 67%, 62%);
+    background-image: url(../img/bg-pattern-card.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card__image {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.card__text {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.card__name {
+    font-size: 1.5rem;
+}
+
+.card__age,
+.card__city {
+    font-weight: lighter;
+    color: var(--text-gray);
+}
+
+.card__city {
+    font-size: 1.2rem;
+}
+
+.card__followers {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #ccc;
+    margin-top: 3rem;
+}
+
+.followers__number,
+.followers__paragraph {
+    text-align: center;
+}
+
+.followers__number {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.followers__paragraph {
+    margin-top: 0;
+    color: var(--text-gray);
+}
+
+@media (max-width:801px) {
+    .main-container::before {
+        top: -300px;
+        left: -300px;
+    }
+    .main-container::after {
+        bottom: -300px;
+        right: -300px;
+    }
+    .card {
+        width: 45%;
+    }
+}
+
+@media (max-width:415px) {
+    .main-container::before,
+    .main-container::after {
+        width: 200vmin;
+        height: 200vmin;
+    }
+    .main-container::before {
+        top: -480px;
+        left: -480px;
+    }
+    .main-container::after {
+        bottom: -480px;
+        right: -480px;
+    }
+    .card {
+        width: 80%;
+    }
+}
