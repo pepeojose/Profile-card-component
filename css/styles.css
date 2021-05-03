@@ -10,6 +10,7 @@
 
 body {
     margin: 0;
+    background-color: #000;
 }
 
 img {
@@ -17,6 +18,11 @@ img {
 }
 
 .main-container {
+    position: relative;
+    max-width: 1350px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
     height: 100vh;
     background-color: var(--dark-cyan);
     display: flex;
@@ -28,7 +34,7 @@ img {
 .main-container::after,
 .main-container::before {
     content: '';
-    position: fixed;
+    position: absolute;
     display: block;
     background-color: var(--circle-blue);
     border-radius: 50%;
